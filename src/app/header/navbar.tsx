@@ -2,14 +2,13 @@ import Image from "next/image";
 
 export default function Navbar({ value, onChange, onSubmit ,src}: any) {
   return (
-    <div className="flex justify-between items-center px-5 py-5">
+    <div className="flex justify-between items-center px-5 py-5 top-0 sticky z-20 bg-zinc-900 mb-5">
       <div>
        <Image
        src={src}
        alt="weather-image"
        width={50}
        height={50}
-    
        />
       </div>
       <div>
