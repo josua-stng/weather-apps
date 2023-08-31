@@ -19,12 +19,12 @@ export default function Weather({
   windGust,
 }: PropsWeather) {
   return (
-    <div className="border-2 border-gray-500 px-10 py-2 rounded-lg ">
+    <div className="border-2 border-gray-500 px-10 py-2 rounded-lg font-serif">
       <Image src={weatherImage} alt="cloud-image" width={50} height={50} />
       <p className="mb-1 mt-2">{weatherDate}</p>
       <p className="mb-1">{Math.round(weatherTemp)}°c</p>
       <p>{weatherConditions}</p>
-      <p className="text-center mt-4">Air Quality Index</p>
+      <p className="text-center mt-4 text-zinc-400 mb-1.5">Air Quality Index</p>
       <div className="flex justify-center items-center">
         <Image
           src={
@@ -37,7 +37,7 @@ export default function Weather({
         />
         <div className="px-2">
           <p>Speed</p>
-          <p>{windSpeed}</p>
+          <p className="pl-2">{windSpeed}</p>
         </div>
         <div className="px-2">
           <p>Deg</p>
