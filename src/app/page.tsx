@@ -20,10 +20,14 @@ export default function Home() {
       });
     } else {
       const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=12&appid=3f7b747f2bf04b4d87809960200da847&units=metric`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/data/2.5/forecast?q=${city}&cnt=12&appid=${process.env.NEXT_PUBLIC_APIKEY}&units=metric`
       );
       const data = await res.json();
       setWeather(data);
+      const formData = new FormData(event.target as HTMLFormElement);
+      const query = formData.get('city');
+      console.log(query);
+      // console.log(query);
       if (data.cod === '404') {
         Swal.fire({
           icon: 'error',
@@ -52,11 +56,11 @@ export default function Home() {
       <Navbar
         src={`https://icon-library.com/images/white-cloud-icon-png/white-cloud-icon-png-29.jpg`}
         onSubmit={getDataWeatherApi}
-        name="city"
         value={city}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
           setCity(event?.target.value)
         }
+        name={'city'}
       />
       <div className="sm:flex px-10 ">
         <WeatherInformation
