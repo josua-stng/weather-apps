@@ -13,7 +13,7 @@ export default function WeatherInformation({
   sunset,
 }: PropsWeatherInformation) {
   return (
-    <div className="text-zinc-200 mt-7 bg-neutral-800 px-5 mr-5 h-max font-mono rounded-lg pt-1 pb-1 mb-10">
+    <div className="text-zinc-200 mt-7 bg-neutral-800 px-5 sm:mr-5 h-max font-mono rounded-lg pt-1 pb-1 mb-10 ">
       <p className="text-lg mt-4 mb-3 truncate">Todays Highlights</p>
       <h1 className="mb-1">{name}</h1>
       <h2 className="mb-1">{country}</h2>
