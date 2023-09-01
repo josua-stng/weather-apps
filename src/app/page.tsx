@@ -24,10 +24,6 @@ export default function Home() {
       );
       const data = await res.json();
       setWeather(data);
-      const formData = new FormData(event.target as HTMLFormElement);
-      const query = formData.get('city');
-      console.log(query);
-      // console.log(query);
       if (data.cod === '404') {
         Swal.fire({
           icon: 'error',
